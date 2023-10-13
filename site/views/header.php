@@ -28,13 +28,13 @@
 
 <body>
     
-    <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <!-- Page Preloder  -->
+     <!-- <div id="preloder">
         <div class="loader"></div>
     </div> -->
 
     <!-- Offcanvas Menu Begin -->
-    <!-- <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">
@@ -53,7 +53,7 @@
             <a href="#">Đăng nhập</a>
             <a href="#">Đăng ký</a>
         </div>
-    </div> -->
+    </div>
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->

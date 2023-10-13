@@ -59,12 +59,12 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="../content/frontend/img/product/'.$item["hinh"].'">
                                     <div class="label new">New</div>
-                                    <ul class="product__hover">
+                                    <ul class="product__hover" style="display: flex;justify-content: center;">
                                     
                                         <li><a href="../content/frontend/img/product/'.$item["hinh"].'" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></a></li>
-                                        <form action="views/handle_cart.php" method="post">
-                                            <li><a style="overflow: hidden;"><button type="submit" style="border:unset;"><span class="icon_bag_alt"></span></button></a></li>
+                                        <form action="views/handle_cart.php" method="post" >
+                                            <li><a style="overflow: hidden;"><button id="add" type="submit" style="border:unset;width:100%"><span class="icon_bag_alt"></span></button></a></li>
                                             <input type="hidden" name="comback" value="">
                                             <input type="hidden" name="hinh" value="'.$item["hinh"].'">
                                             <input type="hidden" name="id" value="'.$item["id"].'">

@@ -1236,6 +1236,9 @@ ol {
 .product__hover li:hover a {
 	background: #ca1515;
 }
+.product__hover form li a:hover button{
+	background-color: #ca1515 !important;
+}
 
 .product__hover li:hover a span {
 	color: #ffffff;

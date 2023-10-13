@@ -8,6 +8,7 @@
     include "../model_DAO/materials.php";
     include "../model_DAO/public.php";
     include "../model_DAO/users.php";
+    include "../model_DAO/blog.php";
 
     $sl = isset($_SESSION["shopping_cart"]) ? count($_SESSION["shopping_cart"]) : 0;
 
@@ -31,6 +32,19 @@
                     $list_product_all = sp_select_all(9,( isset($_GET["number"]) ? $_GET["number"]*9: null),( isset($_GET["show"]) ? array($_GET["show"],$_GET["danh_muc"]): null));
                 }
                 $products_number = sp_exist();
+                if(isset($search)){
+                    if(count(search($search)) > 0){
+                        $list_product_all = search($search);
+                    }else echo '<div class="container mt-5">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Thông báo!</strong> Hiện tại không có sản phẩm nào trong danh sách.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>';
+                }
+                
 
                 include "views/shop.php";
                 break; 
@@ -60,7 +74,14 @@
                 break;
           
             case 'blog':
-                include "views/blog.php";       
+                if(isset($id)){
+                    $list_blog = blog_select_all(4);
+                    $blog_item = blog_select_by_id($id);
+                    include "views/blog-details.php"; 
+                }else{
+                    $list_blog = blog_select_all(6);
+                    include "views/blog.php";  
+                }
                 break;
             case 'blog-details':
                 include "views/blog-details.php";

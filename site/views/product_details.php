@@ -96,22 +96,38 @@
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Bình luận ( 2 )</a>
                             </li>
                         </ul>
+                        
                         <div class="tab-../content">
-                            <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                <h6>Tường kà</h6>
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed
-                                    quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt loret.
-                                    Neque porro lorem quisquam est, qui dolorem ipsum quia dolor si. Nemo enim ipsam
-                                    voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed quia ipsu
-                                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Nulla
-                                consequat massa quis enim.</p>
-                                <h6>Tú lợn</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                                    nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                                quis, sem.</p>
-                                <a href="">xem thêm</a>
-                            </div>
+                        <a href="#" class="leave-btn" style="float:right">Để lại bình luận</a>
+                        <div class="tab-pane" id="tabs-3" role="tabpanel">
+
+                        <div style="display: flex; align-items: flex-end; margin:10px 10px 10px 0;">
+                        <img src="../content/frontend/img/user/user.jpg" style=" border-radius:50%; margin-right: 10px; height:50px" alt="">
+                        <h6>Tường kà</h6>
+                        </div>
+                        <p>Tôi đã mua sản phẩm này và thực sự hài lòng về sự đẹp và sự tinh tế của nó. Chất lượng đá quý là xuất sắc, và tượng được tạo hình một cách rất tỉ mỉ. Nó không chỉ là một món trang trí đẹp mắt mà còn là một biểu tượng của sự tĩnh lặng và thăng hoa. Tôi rất vui mua sản phẩm này và sẽ khuyên bạn bè và gia đình của mình nên thử nó</p>
+                        <div class="blog__comment__item__text">
+                            <ul>
+                                <li><i class="fa fa-clock-o"></i> Seb 17, 2019</li>
+                                <li><i class="fa fa-heart-o"></i> 12</li>
+                                <li><i class="fa fa-share"></i> 1</li>
+                            </ul>
+                        </div>
+
+                        <div style="display: flex; align-items: flex-end; margin:10px 10px 10px 0;">
+                        <img src="../content/frontend/img/user/tu.jpg" style=" border-radius:50%; margin-right: 10px; height:50px" alt="">
+                        <h6>Tú lợn</h6>
+                        </div>
+                        <p>Sản phẩm đá quý này thực sự tuyệt vời! Chất lượng tượng đá tạo thêm vẻ đẹp tự nhiên và tinh tế cho bất kỳ không gian nào. Tôi ấn tượng bởi sự tỉ mỉ trong từng chi tiết, từ chất lượng đá quý cho đến sự tạo hình tài tình của tượng.</p>
+                        <div class="blog__comment__item__text">
+                            <ul>
+                                <li><i class="fa fa-clock-o"></i> Seb 17, 2019</li>
+                                <li><i class="fa fa-heart-o"></i> 12</li>
+                                <li><i class="fa fa-share"></i> 1</li>
+                            </ul>
+                        </div>
+                        <a href="">xem thêm</a>
+                        </div>
                         </div>
                     </div>
                 </div>

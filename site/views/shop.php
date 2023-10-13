@@ -69,18 +69,28 @@
                        }else{
                         foreach($list_product_all as $item){
                             echo '<div class=" col-md-4 col-sm-6 mix ">
-                                    <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="../content/frontend/img/product/'.$item["hinh"].'">
-                                            <div class="label new">New</div>
-                                            <ul class="product__hover">
-                                                <li><a href="../content/frontend/img/product/'.$item["hinh"].'" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                                <li><a href="#"><span class="icon_heart_alt"></a></li>
-                                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product__item__text">
-                                            <h6><a href="index.php?page=product-details&id='.$item["id"].'">'.$item["ten_sp"].'</a></h6>
-                                            <div class="rating">';
+                            <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="../content/frontend/img/product/'.$item["hinh"].'">
+                                <div class="label new">New</div>
+                                <ul class="product__hover" style="display: flex;justify-content: center;">
+                                
+                                    <li><a href="../content/frontend/img/product/'.$item["hinh"].'" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                    <li><a href="#"><span class="icon_heart_alt"></a></li>
+                                    <form action="views/handle_cart.php" method="post" >
+                                        <li><a style="overflow: hidden;"><button id="add" type="submit" style="border:unset;width:100%"><span class="icon_bag_alt"></span></button></a></li>
+                                        <input type="hidden" name="comback" value="">
+                                        <input type="hidden" name="hinh" value="'.$item["hinh"].'">
+                                        <input type="hidden" name="id" value="'.$item["id"].'">
+                                        <input type="hidden" name="ten_sp" value="'.$item["ten_sp"].'">
+                                        <input type="hidden" name="don_gia" value="'.$item["don_gia"].'">
+                                        <input type="hidden" name="thanh_cong" value="">
+                                        <input type="hidden" name="so_luong" value="1">
+                                    </form>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="index.php?page=product-details&id='.$item["id"].'">'.$item["ten_sp"].'</a></h6>
+                                <div class="rating">';
                                                 for($i=0; $i < $item["sao_danh_gia"]; $i++){ 
                                                     echo'<i class="fa fa-star" style="margin-right: unset;"></i>';
                                                 };

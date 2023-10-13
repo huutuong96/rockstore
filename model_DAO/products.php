@@ -98,4 +98,11 @@
         return pdo_query($sql);
     }
     
+    function search($data){
+        $sql = "SELECT san_pham.*, anh_san_pham.hinh, anh_san_pham.hinh_1, anh_san_pham.hinh_2, anh_san_pham.hinh_3 FROM san_pham
+        INNER JOIN anh_san_pham ON san_pham.hinh = anh_san_pham.id
+        WHERE ten_sp like ?";
+        $data = "%".$data."%";
+        return pdo_query($sql, $data);
+    }
 ?>
