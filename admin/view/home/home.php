@@ -43,7 +43,10 @@
                     <i class="fa fa-chart-pie fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2" style="font-size: large;font-weight: bold;">Bài Viết</p>
-                        <h6 class="mb-0">1234 bài viêt</h6>
+                        <h6 class="mb-0"><?php 
+                                              echo $all_blog[0][0]." sản phẩm" ;
+                                         ?>
+                        </h6>
                     </div>
                 </div>
             </div>

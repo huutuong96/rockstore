@@ -35,6 +35,11 @@
                 alert("Đăng ký thành công !!!");
             </script>';
     } 
+    if(isset($_GET["lenh"])){
+        echo'<script>
+                alert("mua hàng thành công !!!");
+            </script>';
+    } 
 ?>
 <!-- Footer Section Begin -->
 <footer class="footer">

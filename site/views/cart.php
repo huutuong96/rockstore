@@ -108,7 +108,7 @@
                                         <li>Tổng tiền <span>'. number_format($tong_tien) .' VND</span></li>
                                         <li>Số Tiền <span>'. number_format($tong_tien) .' VND</span></li>
                                     </ul>
-                                    <button  class="primary-btn" style="width: 100%;">thanh toán ngay</button>';
+                                    <button  class="primary-btn" style="width: 100%;" name="thanh_toan">thanh toán ngay</button>';
                         ?>
                         </form>
                     </div>

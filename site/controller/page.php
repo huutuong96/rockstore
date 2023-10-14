@@ -9,6 +9,7 @@
     include "../model_DAO/public.php";
     include "../model_DAO/users.php";
     include "../model_DAO/blog.php";
+    include "../model_DAO/bil.php";
 
     $sl = isset($_SESSION["shopping_cart"]) ? count($_SESSION["shopping_cart"]) : 0;
 
@@ -59,8 +60,32 @@
                 include "views/contact.php";         
                 break;
             case 'checkout':
-                include "views/checkout.php";        
-                break;
+                if(isset($thanh_toan)){
+                    if(isset($_SESSION["user"])){
+                    $id_kh = $_SESSION["user"]["id"];
+                    $user = user_select_by_id($id_kh);
+                    extract($user);
+                    }
+                    include "views/checkout.php"; 
+                    break;         
+                }
+                if(isset($hoan_tat)){
+                    $date = new datetime();
+                    $date = $date->format("Y/m/d");
+                    if(isset($_SESSION["user"])){
+                        $id_kh = $_SESSION["user"]["id"];
+                        }
+                    hd_insert($date, $id_kh);
+                    $id_hd = show_id();
+                    foreach ($_SESSION["shopping_cart"] as $item) {
+                        hdct_sp_insert($id_hd, $item["id"], $item["so_luong"], $item["don_gia"]);
+                    }
+                    session_destroy();
+                    header("Location:index.php?lenh=thanhcong");
+                    break; 
+                }
+                
+                
             case 'admin':
                 header("location: ../index.php?mod=admin")       ;
                 break;
