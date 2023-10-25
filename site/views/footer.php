@@ -4,15 +4,19 @@
     <div class="container-fluid">
         <div class="row">
             <?php
-                foreach ($panpage as $item) {
-                    echo '<div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                            <div class="instagram__item set-bg" data-setbg="../content/frontend/img/instagram/'.$item["hinh"].'">
-                                <div class="instagram__text">
-                                    <i class="fa fa-'.$item["ten_mxh"].'"></i>
-                                    <a href="#">@ Rock Store</a>
+                if(isset($panpage)){
+                    foreach ($panpage as $item) {
+                        echo '<div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                                <div class="instagram__item set-bg" data-setbg="../content/frontend/img/instagram/'.$item["hinh"].'">
+                                    <div class="instagram__text">
+                                        <i class="fa fa-'.$item["ten_mxh"].'"></i>
+                                        <a href="#">@ Rock Store</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>';
+                            </div>';
+                    }
+                }else{
+                    echo"khoong co";
                 }
             ?>
         </div>
@@ -21,9 +25,15 @@
 <!-- Instagram End -->
 <?php
     if(isset($_GET["thanh_cong"])){
+        if($_GET["thanh_cong"] == 1){
         echo'<script>
                 alert("Thêm giỏ hàng thành công !!!");
+            </script>';}
+        if($_GET["thanh_cong"] == 2){
+            echo'<script>
+                alert("Thêm vào list yêu thích thành công !!!");
             </script>';
+        }
     } 
     if(isset($_GET["user"])){
         echo'<script>

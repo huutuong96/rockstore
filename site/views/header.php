@@ -90,11 +90,11 @@
                         </div>
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
+                            <li><a href="index.php?page=cart"><span class="icon_heart_alt"></span>
+                                <div class="tip"><?= $sl_like; ?></div>
                             </a></li>
-                            <li><a href="index.php?page=cart"><span class="icon_bag_alt"></span>
-                                <div class="tip"><?= $sl; ?></div>
+                            <li><a href="index.php?page=cart&cart"><span class="icon_bag_alt"></span>
+                                <div class="tip"><?= $sl_cart; ?></div>
                             </a></li>
                         </ul>
                     </div>

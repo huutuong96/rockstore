@@ -9,6 +9,7 @@
     include "../model_DAO/public.php";
     include "../model_DAO/users.php";
     include "../model_DAO/blog.php";
+    include "../model_DAO/bil.php";
     include "../model_DAO/product_image.php";
 
     if(isset($_SESSION["user"]) ){

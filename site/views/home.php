@@ -62,7 +62,7 @@
                                     <ul class="product__hover" style="display: flex;justify-content: center;">
                                     
                                         <li><a href="../content/frontend/img/product/'.$item["hinh"].'" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></a></li>
+                                        <li><a href="views/handle_cart.php?id='.$item["id"].'&comback"><span class="icon_heart_alt"></a></li>
                                         <form action="views/handle_cart.php" method="post" >
                                             <li><a style="overflow: hidden;"><button id="add" type="submit" style="border:unset;width:100%"><span class="icon_bag_alt"></span></button></a></li>
                                             <input type="hidden" name="comback" value="">

@@ -21,9 +21,7 @@
          $arr_thongkedt[]=[$item["ten_dm"], $Tong_tien];
         
      }
-    //   echo"<pre>";
-    //      var_dump($arr_thongkedt);
-    //      echo"<hr>";
+    //  var_dump($arr_thongkesp);
     include "view/header.php";
     include "view/thong_ke/home.php";
     include "view/footer.php";

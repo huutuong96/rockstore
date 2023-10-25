@@ -10,9 +10,10 @@
     include "../model_DAO/users.php";
     include "../model_DAO/blog.php";
     include "../model_DAO/bil.php";
+    include "../model_DAO/messenges.php";
 
-    $sl = isset($_SESSION["shopping_cart"]) ? count($_SESSION["shopping_cart"]) : 0;
-
+    $sl_cart = isset($_SESSION["shopping_cart"]) ? count($_SESSION["shopping_cart"]) : 0;
+    $sl_like = isset($_SESSION["like_sp"]) ? count($_SESSION["like_sp"]) : 0;
     include "views/header.php";
 
     if(isset($page)){
@@ -53,7 +54,7 @@
             case 'product-details':
                 $product = sp_select_by_id($_GET['id']);
                 $list_product_all = sp_select_all(4);
-                
+                $list_msg = show_msg($_GET['id']);
                 include "views/product_details.php";   
                 break;
             case 'contact':
@@ -80,7 +81,7 @@
                     foreach ($_SESSION["shopping_cart"] as $item) {
                         hdct_sp_insert($id_hd, $item["id"], $item["so_luong"], $item["don_gia"]);
                     }
-                    session_destroy();
+                    unset($_SESSION["shopping_cart"]);
                     header("Location:index.php?lenh=thanhcong");
                     break; 
                 }
@@ -91,10 +92,19 @@
                 break;
             case 'cart':
                 if(isset($cap_nhat)){
-                    for ($i=0; $i < $so_luong_sp ; $i++) { 
-                        $_SESSION["shopping_cart"][$i]["so_luong"] = $_POST['so_luong_sp'.$i.''];
+                    if(isset($cart)){
+                        for ($i=0; $i < $so_luong_sp ; $i++) { 
+                            $_SESSION["shopping_cart"][$i]["so_luong"] = $_POST['so_luong_sp'.$i.''];
+                        }
+                    }else{
+                        for ($i=0; $i < $so_luong_sp ; $i++) { 
+                            $_SESSION["like_sp"][$i]["so_luong"] = $_POST['so_luong_sp'.$i.''];
+                        }
                     }
+                    
                 }
+                $list =  isset($_GET["cart"])? $_SESSION["shopping_cart"] :$_SESSION["like_sp"];
+                $title = isset($_GET["cart"])? "shopping cart" :" list product like";
                 include "views/cart.php";        
                 break;
           

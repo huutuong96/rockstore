@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="index.php"><i class="fa fa-home"></i> Home</a>
-                        <span>Shopping cart</span>
+                        <span><?= $title?></span>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                                             </thead>
                                             <tbody>';
                                         
-                                        foreach ($_SESSION["shopping_cart"] as $item) {
+                                        foreach ($list as $item) {
                                             echo '<tr>
                                                     <td class="cart__product__item">
                                                         <img src="../content/frontend/img/product/'.$item["hinh"].'" alt="" style="height:90px; width:90px">
@@ -53,6 +53,9 @@
                                                         <input type="hidden" name="vi_tri" value="'.$i.'">
                                                         <td class="cart__close"><a href="views/handle_cart.php?vi_tri='.$i.'" style="border:unset; border-radius:40%"><span class="icon_close"></span></a></td>   
                                                 </tr>';
+                                                if(isset($_GET["cart"])){
+                                                    echo ' <input type="hidden" name="cart">';
+                                                }
                                             $i++;
                                         }
                                     } else {
