@@ -103,8 +103,9 @@
                     }
                     
                 }
-                $list =  isset($_GET["cart"])? $_SESSION["shopping_cart"] :$_SESSION["like_sp"];
+                $list =  isset($_GET["cart"])? $_SESSION["shopping_cart"]?? null :$_SESSION["like_sp"] ?? null;
                 $title = isset($_GET["cart"])? "shopping cart" :" list product like";
+                $for = isset($_GET["cart"])? "cart" :"like";
                 include "views/cart.php";        
                 break;
           

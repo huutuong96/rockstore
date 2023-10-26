@@ -6,6 +6,21 @@
     include "../../model_DAO/products.php";
     include "../../model_DAO/pdo.php";
 
+    // xóa sp trong gio hang và list like product
+    if($_GET["for"] =="cart"){
+        if (isset($_GET['vi_tri'])) {
+            array_splice($_SESSION['shopping_cart'],$_GET['vi_tri'],1);
+            header("Location: ../index.php?page=cart&cart");
+            exit();
+        }
+    }else{
+        if (isset($_GET['vi_tri'])) {
+            array_splice($_SESSION['like_sp'],$_GET['vi_tri'],1);
+            header("Location: ../index.php?page=cart");
+            exit();
+        }
+    }
+
     //thêm sp vào giỏ hàng
     if(isset($_POST["id"])){
         $id = $_POST["id"];
@@ -40,19 +55,15 @@
         }
     
         if(isset($_POST["comback"])){
-            header("Location: ../index.php?thanh_cong=l");
+            header("Location: ../index.php?thanh_cong=1");
             exit();
         }else{
-            header("Location: ../index.php?page=product-details&id=$id&thanh_cong=l");
+            header("Location: ../index.php?page=product-details&id=$id&thanh_cong=1");
             exit();
         };
     }
-         // xóa sp trong gio hang
-    if (isset($_GET['vi_tri'])) {
-        array_splice($_SESSION['shopping_cart'],$_GET['vi_tri'],1);
-        header("Location: ../index.php?page=cart");
-        exit();
-    }
+
+
 //thêm sp vào danh sach yêu thích
     if(isset($_GET["id"])){
         $sp = sp_select_by_id($_GET["id"]);

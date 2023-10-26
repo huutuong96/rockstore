@@ -23,7 +23,7 @@
                         <table>
                                 <?php
                                     $i = 0;
-                                    if (isset($_SESSION["shopping_cart"]) && is_array($_SESSION["shopping_cart"])) {
+                                    if ( $list && is_array($list)) {
                                         echo '<thead>
                                                 <tr>
                                                     <th>Sản phẩm</th>
@@ -51,17 +51,14 @@
                                                     </td>
                                                     <td class="cart__total">'.number_format($item["don_gia"] * $item["so_luong"]).' VND</td>
                                                         <input type="hidden" name="vi_tri" value="'.$i.'">
-                                                        <td class="cart__close"><a href="views/handle_cart.php?vi_tri='.$i.'" style="border:unset; border-radius:40%"><span class="icon_close"></span></a></td>   
+                                                        <td class="cart__close"><a href="views/handle_cart.php?vi_tri='.$i.'&for='. $for.'" style="border:unset; border-radius:40%"><span class="icon_close"></span></a></td>   
                                                 </tr>';
-                                                if(isset($_GET["cart"])){
-                                                    echo ' <input type="hidden" name="cart">';
-                                                }
                                             $i++;
                                         }
                                     } else {
                                             echo '<div class="container mt-5">
                                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                        <strong>Thông báo!</strong> Hiện tại không có sản phẩm nào trong giỏ hàng.
+                                                        <strong>Thông báo!</strong> Hiện tại không có sản phẩm nào trong '. $title.'
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -103,9 +100,10 @@
                         <form action="index.php?page=checkout" method="post">
                         <?php
                         $tong_tien= 0;
-                            foreach ($_SESSION["shopping_cart"] as $item) {
+                        if ( $list && is_array($list)) {
+                            foreach ($list as $item) {
                                 $tong_tien += ($item["don_gia"] * $item["so_luong"]);
-                            }
+                            }}
                             echo '<h6>Tổng Hóa Đơn</h6>
                                     <ul>
                                         <li>Tổng tiền <span>'. number_format($tong_tien) .' VND</span></li>
